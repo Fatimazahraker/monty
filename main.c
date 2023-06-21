@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
-	file = open(argv[1], O_RDONLYI);
+	file = open(argv[1], O_RDONLY);
 	if (file == -1)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv);
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 			continue;
 		}
 		code = strtok(buffer, "  \t\n");
-		arg = strtok(NULL, "  \t\n");
+		global_n = strtok(NULL, "  \t\n");
 		executecode(&stack, code, numbr_line);
 		numbr_line++;
 	}
