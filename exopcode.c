@@ -6,7 +6,7 @@
  *
  */
 
-void executecode(stack_t **stack, char *str,unsigned int line_number);
+void executecode(stack_t **stack, char *str,unsigned int line_number)
 {
 	instruction_t inst[] = {
 		{"push", push},
