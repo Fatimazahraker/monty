@@ -46,7 +46,7 @@ void executecode(stack_t **stack, char *str,unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 stack_t *add_node(stack_t **head, const int i);
 void pall(stack_t **stack, unsigned int line_number);
-int is_number(char *str);
+int is_number(char *string);
 void free_stack(stack_t *head);
 #endif
 
