@@ -28,9 +28,10 @@ stack_t *add_node(stack_t **head, const int i)
 }
 
 /**
- *
- *
- *
+ * push - pushes an elmnt onto stack
+ * @stack: double ptr to top of the stack
+ * @line_number: line numb where the "push" opcode appears
+ * Return: void
  */
 
 void push(stack_t **stack, unsigned int line_number)
