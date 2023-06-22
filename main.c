@@ -40,8 +40,8 @@ int main(int argc, char **argv)
 		}
 		code = strtok(g_parm.buffer, "  \t\n");
 		g_parm.global_n = strtok(NULL, "  \t\n");
-		executecode(&stack, code, numbr_line);
 		numbr_line++;
+		executecode(&stack, code, numbr_line);
 	}
 	fclose(g_parm.file);
 	free(g_parm.buffer);

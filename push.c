@@ -45,7 +45,6 @@ void push(stack_t **stack, unsigned int line_number)
 		new_stack = add_node(stack, atoi(g_parm.global_n));
 		if (new_stack == NULL)
 		{
-			free_stack(*stack);
 			fclose(g_parm.file);
 			free(g_parm.buffer);
 			exit(EXIT_FAILURE);
