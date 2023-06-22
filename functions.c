@@ -5,16 +5,16 @@
  * @str: string
  * Return: 0 on success, 1 otherwise
  */
-int is_number(char *str)
+int is_number(char *string)
 {
 	int s = 0;
 
-	while (str[s])
+	while (string[s])
 	{
-		if (s == 0 && (str[s] == '-' || str[s] == '+'))
+		if (s == 0 && (string[s] == '-' || string[s] == '+'))
 			s++;
 
-		if (str[s] < 48 || str[s] > 57)
+		if (string[s] < '0' || string[s] > '9')
 			return (1);
 
 		s++;
