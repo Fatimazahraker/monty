@@ -13,6 +13,8 @@ void pop(stack_t **stack, unsigned int line_number)
 	if (!stack || !*stack)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+		fclose(g_parm.file);
+		free(g_parm.buffer);
 		exit(EXIT_FAILURE);
 	}
 
@@ -36,6 +38,8 @@ void pint(stack_t **stack, unsigned int line_number)
     if (!stack || !*stack)
     {
         fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+	fclose(g_parm.file);
+        free(g_parm.buffer);
         exit(EXIT_FAILURE);
     }
 
@@ -56,6 +60,8 @@ void swap(stack_t **stack, unsigned int line_number)
     if (!stack || !*stack || !(*stack)->next)
     {
         fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+	fclose(g_parm.file);
+        free(g_parm.buffer);
         exit(EXIT_FAILURE);
     }
 
@@ -66,4 +72,23 @@ void swap(stack_t **stack, unsigned int line_number)
 
     top1->n = top2->n;
     top2->n = temp;
+}
+
+/**
+ * _add - adds the two top elements of the stack
+ * @stack: a pointer to the first node of the stack
+ * @line_number: the line number
+ */
+
+void _add(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current;
+
+
+	current = *stack;
+
+	*stack = current->next;
+	(*stack)->n = (*stack)->n + current->n;
+	(*stack)->prev = NULL;
+	free(current);
 }
