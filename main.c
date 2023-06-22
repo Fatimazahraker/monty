@@ -34,11 +34,6 @@ int main(int argc, char **argv)
 	while (getline(&g_parm.buffer, &buf_size, g_parm.file) != -1)
 	{
 		numbr_line++;
-		if (*g_parm.buffer == '\n')
-		{
-			numbr_line++;
-			continue;
-		}
 		code = strtok(g_parm.buffer, "  \t\n");
 		if (code == NULL)
                         continue;
