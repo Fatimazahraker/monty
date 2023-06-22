@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	size_t buf_size = 0;
 	stack_t *stack = NULL;
 	char *code = NULL;
-	unsigned int numbr_line = 1;
+	unsigned int numbr_line = 0;
 
 	if (argc != 2)
 	{
@@ -33,6 +33,7 @@ int main(int argc, char **argv)
 	}
 	while (getline(&g_parm.buffer, &buf_size, g_parm.file) != -1)
 	{
+		numbr_line++;
 		if (*g_parm.buffer == '\n')
 		{
 			numbr_line++;
@@ -40,7 +41,6 @@ int main(int argc, char **argv)
 		}
 		code = strtok(g_parm.buffer, "  \t\n");
 		g_parm.global_n = strtok(NULL, "  \t\n");
-		numbr_line++;
 		executecode(&stack, code, numbr_line);
 	}
 	fclose(g_parm.file);

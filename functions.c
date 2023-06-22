@@ -9,6 +9,9 @@ int is_number(char *string)
 {
 	int s = 0;
 
+	if (string == NULL)
+		return (1);
+
 	while (string[s])
 	{
 		if (s == 0 && (string[s] == '-' || string[s] == '+'))
