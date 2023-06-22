@@ -39,9 +39,9 @@ int main(int argc, char **argv)
 			numbr_line++;
 			continue;
 		}
-		if (code == NULL)
-			continue;
 		code = strtok(g_parm.buffer, "  \t\n");
+		if (code == NULL)
+                        continue;
 		g_parm.global_n = strtok(NULL, "  \t\n");
 		executecode(&stack, code, numbr_line);
 	}
