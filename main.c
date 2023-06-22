@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "monty.h"
-char *global_n;
+global_param g_parm;
 
 /**
  * main - entry point of the program
@@ -14,9 +14,7 @@ char *global_n;
 
 int main(int argc, char **argv)
 {
-	FILE *file;
 	size_t buf_size = 0;
-	char *buffer = NULL;
 	stack_t *stack = NULL;
 	char *code = NULL;
 	unsigned int numbr_line = 0;
@@ -27,26 +25,26 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
-	file = fopen(argv[1], "r");
-	if (!file)
+	g_parm.file = fopen(argv[1], "r");
+	if (!g_parm.file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", *argv);
 		exit(EXIT_FAILURE);
 	}
-	while (getline(&buffer, &buf_size, file) != -1)
+	while (getline(&g_parm.buffer, &buf_size, g_parm.file) != -1)
 	{
-		if (*buffer == '\n')
+		if (*g_parm.buffer == '\n')
 		{
 			numbr_line++;
 			continue;
 		}
-		code = strtok(buffer, "  \t\n");
-		global_n = strtok(NULL, "  \t\n");
+		code = strtok(g_parm.buffer, "  \t\n");
+		g_parm.global_n = strtok(NULL, "  \t\n");
 		executecode(&stack, code, numbr_line);
 		numbr_line++;
 	}
-	fclose(file);
-	free(buffer);
+	fclose(g_parm.file);
+	free(g_parm.buffer);
 	free_stack(stack);
 	exit(EXIT_SUCCESS);
 	return 0;

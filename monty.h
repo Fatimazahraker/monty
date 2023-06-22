@@ -11,7 +11,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-extern char *global_n;
+/*extern char *global_n;*/
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -27,6 +27,20 @@ typedef struct stack_s
         struct stack_s *prev;
         struct stack_s *next;
 } stack_t;
+
+/**
+ *
+ *
+ *
+ *
+ */
+typedef struct global_param_s
+{
+	FILE *file;
+	char *buffer;
+	char *global_n;
+}global_param;
+extern global_param g_parm;
 
 /**
  * struct instruction_s - opcode and its function

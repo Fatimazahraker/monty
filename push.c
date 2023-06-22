@@ -40,12 +40,14 @@ void push(stack_t **stack, unsigned int line_number)
 
 	(void)line_number;
 	
-	if (is_number(global_n) != 0)
+	if (is_number(g_parm.global_n) != 0)
 	{
-		new_stack = add_node(stack, atoi(global_n));
+		new_stack = add_node(stack, atoi(g_parm.global_n));
 		if (new_stack == NULL)
 		{
 			free_stack(*stack);
+			fclose(g_parm.file);
+			free(g_parm.buffer);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -54,6 +56,8 @@ void push(stack_t **stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fclose(g_parm.file);
+        	free(g_parm.buffer);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
