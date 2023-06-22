@@ -6,9 +6,10 @@
 char *global_n;
 
 /**
- *
- *
- *
+ * main - entry point of the program
+ * @argc: numb of command-line arg
+ * @argv: array of command-line arg
+ * Return: 0 on success, 1 otherwise
  */
 
 int main(int argc, char **argv)

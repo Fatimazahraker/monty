@@ -1,23 +1,23 @@
 #include "monty.h"
 
 /**
- * is_number - checks if a string is a number
- * @str: the string
- * Return: 0 on success, and 1 otherwise
+ * is_number - if string is a number
+ * @str: string
+ * Return: 0 on success, 1 otherwise
  */
 int is_number(char *str)
 {
-	int i = 0;
+	int s = 0;
 
-	while (str[i])
+	while (str[s])
 	{
-		if (i == 0 && (str[i] == '-' || str[i] == '+'))
-			i++;
+		if (s == 0 && (str[s] == '-' || str[s] == '+'))
+			s++;
 
-		if (str[i] < 48 || str[i] > 57)
+		if (str[s] < 48 || str[s] > 57)
 			return (1);
 
-		i++;
+		s++;
 	}
 
 	return (0);

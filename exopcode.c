@@ -1,9 +1,11 @@
 #include "monty.h"
 
 /**
- *
- *
- *
+ * executecode - Executes the corresponding instruction based on the opcode
+ * @stack: double pointer to the top of the stack
+ * @str: to be executed
+ * @line_number: where the opcode appears
+ * Return: void
  */
 
 void executecode(stack_t **stack, char *str,unsigned int line_number)
