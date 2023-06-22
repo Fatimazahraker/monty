@@ -13,9 +13,17 @@ void executecode(stack_t **stack, char *str,unsigned int line_number)
 	instruction_t inst[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	int i = 0;
+	stack_t *hold;
+
+	hold = *stack;
+
 
 	while (inst[i].opcode != NULL)
 	{
@@ -27,6 +35,9 @@ void executecode(stack_t **stack, char *str,unsigned int line_number)
 		i++;
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, str);
+	fclose(g_parm.file);
+	free_stack(hold);
+	free(g_parm.buffer);
 	exit(EXIT_FAILURE);
 }
 
