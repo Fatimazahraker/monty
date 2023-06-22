@@ -88,3 +88,27 @@ void add(stack_t **stack, unsigned int line_number)
 	(*stack)->prev = NULL;
 	free(current);
 }
+
+/**
+ * _div - divide next top value
+ * @stack: stack
+ * @line_cnt: counte the line
+ *
+ * Return: void
+ */
+void _div(stack_t **stack, unsigned int line_cnt)
+{
+	stack_t *current;
+
+	if (!stack || !*stack || !((*stack)->next))
+	{
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_cnt);
+		exit(EXIT_FAILURE);
+	}
+	
+	current = *stack;
+
+	(*stack)->n = (*stack)->n / current->n;
+	(*stack)->prev = NULL;
+	free(current);
+}

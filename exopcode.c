@@ -18,6 +18,9 @@ void executecode(stack_t **stack, char *str,unsigned int line_number)
 		{"swap", swap},
 		{"nop", nop},
 		{"add", add},
+		{"sub", sub},
+		{"div", _div},
+		{"mul", mul},
 		{NULL, NULL}
 	};
 	int i = 0;
