@@ -70,5 +70,6 @@ void add(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_cnt);
 void sub(stack_t **stack, unsigned int line_cnt);
 void mul(stack_t **stack, unsigned int line_cnt);
+void pstr(stack_t **stack, unsigned int line_cnt);
 #endif
 

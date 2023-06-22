@@ -21,6 +21,7 @@ void executecode(stack_t **stack, char *str,unsigned int line_number)
 		{"sub", sub},
 		{"div", _div},
 		{"mul", mul},
+		{"pstr", pstr},
 		{NULL, NULL}
 	};
 	int i = 0;
