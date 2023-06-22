@@ -62,5 +62,6 @@ stack_t *add_node(stack_t **head, const int i);
 void pall(stack_t **stack, unsigned int line_number);
 int is_number(char *string);
 void free_stack(stack_t *head);
+void pop(stack_t **stack, unsigned int line_number);
 #endif
 
