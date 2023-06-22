@@ -45,6 +45,7 @@ void push(stack_t **stack, unsigned int line_number)
 		new_stack = add_node(stack, atoi(global_n));
 		if (new_stack == NULL)
 		{
+			free_stack(*stack);
 			exit(EXIT_FAILURE);
 		}
 	}
