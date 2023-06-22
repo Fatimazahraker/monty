@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 	{
 		numbr_line++;
 		code = strtok(g_parm.buffer, "  \t\n");
-		if (code == NULL)
+		if (code == NULL || *code == '#')
                         continue;
 		g_parm.global_n = strtok(NULL, "  \t\n");
 		executecode(&stack, code, numbr_line);
