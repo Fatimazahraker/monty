@@ -23,10 +23,9 @@ stack_t *add_node(stack_t **head, const int i)
 		(*head)->prev = new_node;
 
 	*head = new_node;
-
+	
 	return (new_node);
 }
-
 /**
  * push - pushes an elmnt onto stack
  * @stack: double ptr to top of the stack
@@ -40,7 +39,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	(void)line_number;
 	
-	if (is_number(g_parm.global_n) != 0)
+	if (is_number(g_parm.global_n) == 0)
 	{
 		new_stack = add_node(stack, atoi(g_parm.global_n));
 		if (new_stack == NULL)

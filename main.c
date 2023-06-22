@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	size_t buf_size = 0;
 	stack_t *stack = NULL;
 	char *code = NULL;
-	unsigned int numbr_line = 0;
+	unsigned int numbr_line = 1;
 
 	if (argc != 2)
 	{

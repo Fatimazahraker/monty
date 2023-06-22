@@ -51,6 +51,7 @@ void pint(stack_t **stack, unsigned int line_number)
 void swap(stack_t **stack, unsigned int line_number)
 {
     stack_t *top1, *top2;
+    int temp;
 
     if (!stack || !*stack || !(*stack)->next)
     {
@@ -61,7 +62,7 @@ void swap(stack_t **stack, unsigned int line_number)
     top1 = *stack;
     top2 = (*stack)->next;
 
-    int temp = top1->n;
+    temp = top1->n;
 
     top1->n = top2->n;
     top2->n = temp;
