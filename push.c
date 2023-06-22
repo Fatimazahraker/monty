@@ -3,30 +3,28 @@
 /**
  * add_node - add node to start of stack_t
  * @stack: head
- * @n: numb of new node
- *
+ * @i: numb of new node
  * Return: new node, if creation fails, NULL
  */
-stack_t *add_node(stack_t **stack, const int n)
+stack_t *add_node(stack_t **head, const int i)
 {
-	stack_t *new = malloc(sizeof(stack_t));
+	stack_t *new_node = malloc(sizeof(stack_t));
 
-	if (!new)
+	if (!new_node)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		free(new);
+		free(new_node);
 		return (NULL);
 	}
-	new->n = n;
+	new_node->n = i;
+	new_node->next = *head;
+	new_node->prev = NULL;
+	if (*head)
+		(*head)->prev = new_node;
 
-	new->next = *stack;
-	new->prev = NULL;
-	if (*stack)
-		(*stack)->prev = new;
+	*head = new_node;
 
-	*stack = new;
-
-	return (new);
+	return (new_node);
 }
 
 /**
