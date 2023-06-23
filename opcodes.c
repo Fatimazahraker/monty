@@ -69,7 +69,7 @@ void swap(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * _add - adds the two top elements of the stack
+ * add - adds the two top elements of the stack
  * @stack: a pointer to the first node of the stack
  * @line_number: the line number
  */
@@ -90,19 +90,19 @@ void add(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * _div - divide next top value
+ * div - divide next top value
  * @stack: stack
- * @line_cnt: counte the line
+ * @line_numb: counte the line
  *
  * Return: void
  */
-void _div(stack_t **stack, unsigned int line_cnt)
+void div(stack_t **stack, unsigned int line_numb)
 {
 	stack_t *current;
 
 	if (!stack || !*stack || !((*stack)->next))
 	{
-		fprintf(stderr, "L%d: can't div, stack too short\n", line_cnt);
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_numb);
 		exit(EXIT_FAILURE);
 	}
 	
