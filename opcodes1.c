@@ -46,11 +46,11 @@ void mul(stack_t **stack, unsigned int line_numb)
 /**
  * pstr - print contents of stack_t
  * @stack: stack
- * @line_cnt: count error messages
+ * @line_numb: count error messages
  *
  * Return: void
  */
-void pstr(stack_t **stack, unsigned int line_cnt __attribute__((unused)))
+void pstr(stack_t **stack, unsigned int line_numb __attribute__((unused)))
 {
 	stack_t *current = *stack;
 
