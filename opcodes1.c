@@ -1,56 +1,56 @@
 #include "monty.h"
 
 /**
- * sub -  substracts first two nodes of stack
+ * _sub -  substracts first two nodes of stack
  * @stack: stack
- * @line_numb: count lines
+ * @line_cnt: count lines
  *
  * Return: void
  */
-void sub(stack_t **stack, unsigned int line_numb)
+void sub(stack_t **stack, unsigned int line_cnt)
 {
-	int r;
+	int result;
 
 	if (!stack || !*stack || !((*stack)->next))
 	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", line_numb);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_cnt);
 		exit(EXIT_FAILURE);
 	}
-	r = ((*stack)->next->n) - ((*stack)->n);
+	result = ((*stack)->next->n) - ((*stack)->n);
 	pop(stack, line_cnt);
-	(*stack)->n = r;
+	(*stack)->n = result;
 }
 
 /**
- * mul - divide next value
+ * _mul - divide next value
  * @stack: stack
- * @line_numb: countt line
+ * @line_cnt: countt line
  *
  * Return: void
  */
-void mul(stack_t **stack, unsigned int line_numb)
+void _mul(stack_t **stack, unsigned int line_cnt)
 {
-	int r;
+	int result;
 
 	if (!stack || !*stack || !((*stack)->next))
 	{
-		fprintf(stderr, "L%d: can't mul, stack too short\n", line_numb);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_cnt);
 		exit(EXIT_FAILURE);
 		return;
 	}
 
-	r = ((*stack)->next->n) * ((*stack)->n);
-	pop(stack, line_numb);
-	(*stack)->n = r;
+	result = ((*stack)->next->n) * ((*stack)->n);
+	pop(stack, line_cnt);
+	(*stack)->n = result;
 }
 /**
  * pstr - print contents of stack_t
  * @stack: stack
- * @line_numb: count error messages
+ * @line_cnt: count error messages
  *
  * Return: void
  */
-void pstr(stack_t **stack, unsigned int line_numb __attribute__((unused)))
+void pstr(stack_t **stack, unsigned int line_cnt __attribute__((unused)))
 {
 	stack_t *current = *stack;
 

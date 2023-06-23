@@ -90,19 +90,19 @@ void add(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * div - divide next top value
+ * _div - divide next top value
  * @stack: stack
- * @line_numb: counte the line
+ * @line_cnt: counte the line
  *
  * Return: void
  */
-void div(stack_t **stack, unsigned int line_numb)
+void _div(stack_t **stack, unsigned int line_cnt)
 {
 	stack_t *current;
 
 	if (!stack || !*stack || !((*stack)->next))
 	{
-		fprintf(stderr, "L%d: can't div, stack too short\n", line_numb);
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_cnt);
 		exit(EXIT_FAILURE);
 	}
 	
