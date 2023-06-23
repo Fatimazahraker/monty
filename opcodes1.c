@@ -1,24 +1,24 @@
 #include "monty.h"
 
 /**
- * _sub -  substracts first two nodes of stack
+ * sub -  substracts first two nodes of stack
  * @stack: stack
- * @line_cnt: count lines
+ * @line_numb: count lines
  *
  * Return: void
  */
-void sub(stack_t **stack, unsigned int line_cnt)
+void sub(stack_t **stack, unsigned int line_numb)
 {
-	int result;
+	int r;
 
 	if (!stack || !*stack || !((*stack)->next))
 	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", line_cnt);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_numb);
 		exit(EXIT_FAILURE);
 	}
-	result = ((*stack)->next->n) - ((*stack)->n);
+	r = ((*stack)->next->n) - ((*stack)->n);
 	pop(stack, line_cnt);
-	(*stack)->n = result;
+	(*stack)->n = r;
 }
 
 /**
