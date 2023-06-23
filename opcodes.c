@@ -69,7 +69,7 @@ void swap(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * add - adds the two top elements of the stack
+ * _add - adds the two top elements of the stack
  * @stack: a pointer to the first node of the stack
  * @line_number: the line number
  */

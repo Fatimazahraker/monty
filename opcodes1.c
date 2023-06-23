@@ -28,7 +28,7 @@ void sub(stack_t **stack, unsigned int line_cnt)
  *
  * Return: void
  */
-void _mul(stack_t **stack, unsigned int line_cnt)
+void mul(stack_t **stack, unsigned int line_cnt)
 {
 	int result;
 
